@@ -25,6 +25,17 @@ const testeEndereco = document.querySelector("#testEndereco");
 
 const testeProfissao = document.querySelector("#testProfissao");
 
+const testEmail = valor =>{
+	let padrao = /[\w]{1,}[@]{1}[\w]{1}[.]{1}[\w]{1,}/gi;
+		if(padrao.test(valor)){
+			erro.innerText = " ";
+		}else{
+			erro.innerText = "Email inválido!!";
+		}
+
+	}
+
+
 
 
 
