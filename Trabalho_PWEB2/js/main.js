@@ -23,6 +23,8 @@ const testeNome = document.querySelector("#testNome");
 
 const testeEndereco = document.querySelector("#testEndereco");
 
+const testeProfissao = document.querySelector("#testProfissao");
+
 
 
 
@@ -39,6 +41,8 @@ MaskJS(testeNome).mascararPalavras();
 MaskJS(testeEndereco).mascararAlfanumerico();
 
 MaskJS(testeCidade).mascararLetras();
+
+MaskJS(testeProfissao).mascararLetras();
 
 MaskJS(cpfTeste).mascararPadrao("999.999.999-99");
 
