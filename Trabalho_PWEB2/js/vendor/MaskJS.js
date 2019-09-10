@@ -131,15 +131,7 @@
         this.opcoes = {};
         this.vincularMascara("paraPalavras");
     };
-        
-    MaskJS.paraEmail = function(valor) {
-        return valor.toString().replace(/[\w]{1,}[@]{1}[\w]{1}[.]{1}[\w]{1,}/gi, "");
-    }
 
-    ClassMascarar.prototype.mascararEmail = function () {
-        this.opcoes = {};
-        this.vincularMascara("paraEmail");
-    };
     //aqui
 
     MaskJS.paraPadrao = function(valor, opcoes) {
