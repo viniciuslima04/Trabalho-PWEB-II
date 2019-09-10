@@ -25,20 +25,14 @@ const testeEndereco = document.querySelector("#testEndereco");
 
 const testeProfissao = document.querySelector("#testProfissao");
 
+const erroEmail = document.querySelector("#emailErro");
 
+const erroMotivo = document.querySelector("#motivoErro");
 
+const motivoSolicitacao = document.querySelector(".motivoSolicitacao");
 
+let erro = false;
 
-
-//MaskJS(testeNome).mascararPalavras(){
-//	if (testNome ! 10){
-//		alert("Nome inválido!");
-//	}else(){
-//		alert("Nome válido!");
-//	}
-//};
-
-MaskJS(testeEmail).mascararEmail();
 
 MaskJS(testeNome).mascararPalavras();
 
@@ -66,3 +60,35 @@ MaskJS(testeRG).mascararPadrao("9999999999-9");
 
 MaskJS(testTitulo).mascararPadrao("9999 9999 9999");
 
+const verificarEmail = valor => {
+    let padraoEmail = /[\w]{1,}[@]{1}[\w]{1}[.]{1}[\w]{1,}/gi;
+    if(padraoEmail.test(valor)){
+       erroEmail.innerText = " ";
+    } else {
+       erroEmail.innerText = "Formato incorreto!";
+       erro = true;
+    }
+}
+
+const verificarMotivo = valor =>{
+	const padraoMotivo = ["Trabalho", "Turismo", "Estudo", "Sair"];
+	if (padraoMotivo.indexOf(valor)) {
+		erroMotivo.innerText = " ";
+	}else {
+		erroMotivo.innerText = "Motivo não existente!";
+		erro = true;
+	}
+}
+
+const Submeter = function(){
+	erro = false;
+	validarEmail(testeEmail.value);
+	validarMotivo(motivoSolicitacao.value);
+}
+
+form.onsubmit = function(e){
+	validarFormulario();
+	if(erro) {
+		e.preventDefault();
+	}
+}
