@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Passaporte</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<form action="index2.html">
@@ -11,35 +12,44 @@
 			<label>NOME: </label>
 			<input id="testNome" type="" name="">
 			<br> </br>
+			<span id="nomeErro"></span>
 			
 			<label>ENDEREÇO: </label>
 			<input id="testEndereco" type="" name="">
 			<br> </br>
+			<span id="enderecoErro"></span>
 
 			<label>CIDADE: </label>
-			 <input id="testCid" type="" name="">
+			<input id="testCid" type="" name="">
 			<br> </br>
+			<span id="cidadeErro"></span>
 
 			<label>UF: </label>
-			 <input id="testUf" type="" name="">
+			<input id="testUf" type="" name="">
 			<br> </br>
+			<span id="ufErro"></span>
 
 			<label>TELEFONE RESIDENCIAL: </label> 
 			<input id="telResid" type="" name="">
 			<br> </br>
+			<span id="telefoneResidencial"></span>
 
 			<label>CELULAR: </label>
-			 <input id="testCel" type="" name="">
+			<input id="testCel" type="" name="">
 			<br> </br>
+			<span id="celularErro"></span>
 
 			<label>EMAIL:</label> 
-			<input id="testEmail" type="" name="">
+			<input type="text" id="testEmail" onblur="verificarEmail(this.value);"/>
+			<span id="emailErro"></span>
 			<br> </br>
-
+			
 			<label>PROFISSÃO: </label>
-			 <input id="testProfissao" type="" name="">
+			<input id="testProfissao" type="" name="">
 			<br> </br>
-
+			<span id="profissaoErro"></span>
+			
+			<p class="motivo" onblur="verificarMotivo(this.value)">
 			<label>MOTIVO DA SOLICITAÇÃO</label>
 				<select> name="motivo" form="motivo">
 					<option value="trabalho">TRABALHO</option>
@@ -47,36 +57,57 @@
           			<option value="estudo">ESTUDO</option>
           			<option value="sair">SAIR DO PAÍS</option>
 				</select>
-				<br> </br>
+			</p>
+			<br> </br>
 
 			<label>RG: </label> 
 			<input id="testRG" type="" name="">
 			<br> </br>
+			<span id="rgErro"></span>
 
 			<label>CNH: </label>
 			 <input id="testCnh" type="" name="">
 			<br> </br>
+			<span id="cnhErro"></span>
 
 			<label>CPF: </label>
 			 <input id="teste" type="" name="">
 			<br> </br>
+			<span id="cpfErro"></span>
 
 			<label>TÍTULO DE ELEITOR</label> 
 			<input id="testTitulo" type="" name="">
 			<br> </br>
+			<span id="tituloEleitorErro"></span>
 
-			<label>TEM PASSAPORTE ANTIGO?</label>
-			<input type="radio" name="webmaster" value="sim"/> Sim
-			<input type="radio" name="webmaster" value="nao"/> Não
-			<br> </br>
+			<p>
+				<label >TEM PASSAPORTE ANTIGO?</label>
+				<input type="radio" value="sim" onclick="myFunctionS(this.value);"/>
+				<label >Sim</label>
+				<input type="radio" value="nao" onclick="myFunctionN(this.value);"/>
+				<label> Nao </label>
+			</p>
 
-			<label>NÚMERO DO PASSAPORTE</label> 
-			<input id="numPass" type="" name="">
-			<br></br>
+			<p id="Passaporte">
+				<label>NÚMERO DO PASSAPORTE</label> 
+				<input id="numPass" type="" name="">
+				<br></br>
+			</p>
 
-			<button>Cadastrar</button>
+			<p class="submit">
+				<input type="submit" value="Enviar">
+			</p>
 		</fieldset>
 	</form>
+
+			<script type="text/javascript">
+   				function myFunctionS() {
+    		 	 	document.getElementById("Passaporte").style.display = "block";
+    			}
+    			function myFunctionN() {
+      				document.getElementById("Passaporte").style.display = "none";
+    			}
+    		</script>
 
 	 	 <script src="js/vendor/MaskJS.js"></script>
  		 <script src="js/main.js"></script>
